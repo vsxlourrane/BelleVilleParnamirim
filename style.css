@@ -1,0 +1,709 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #333333;
+    --secondary-color: #000000;
+    --accent-color: #D4AF37; /* Dourado */
+    --light-gray: #f5f5f5;
+    --text-color: #ffffff;
+    --dark-text: #333333;
+}
+
+body {
+    color: var(--dark-text);
+    background-color: var(--light-gray);
+    line-height: 1.6;
+}
+
+/* Header e Navegação */
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: padding 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Hero Section CORRIGIDA */
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://sacdnmrv.blob.core.windows.net/imoveis/imoveis/BELLE-VILLE-PARNAMIRIM_PE_GUARITA-DIURNA_2025_08_01.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    color: white;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #b8941f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* Seções de conteúdo */
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: var(--accent-color);
+    bottom: 0;
+    left: 20%;
+    border-radius: 2px;
+}
+
+/* Sobre o empreendimento */
+.about {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.02);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Diferenciais */
+.features {
+    background-color: var(--primary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.leisure-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.image-container {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-container p {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Simulação */
+.simulation {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.simulation-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Checkbox personalizado */
+.checkbox-group {
+    margin-bottom: 1rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.checkbox-label input {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.checkbox-label input:checked + .checkmark {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.checkbox-label input:checked + .checkmark:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Agendar Visita */
+.visit {
+    background-color: var(--light-gray);
+}
+
+.visit-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Localização */
+.location {
+    background-color: var(--primary-color);
+}
+
+.location-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.location-text {
+    flex: 1;
+    min-width: 300px;
+    color: white;
+}
+
+.location-text h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.location-benefits {
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.benefit-item i {
+    color: var(--accent-color);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.location-map {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    padding: 3rem 0 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.footer-section p, 
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: #ccc;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.copyright {
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        padding: 1rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 0;
+        text-align: center;
+        padding: 0.8rem 0;
+    }
+    
+    .hero {
+        height: 80vh;
+        margin-top: 60px;
+        background-attachment: scroll;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .btn {
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .leisure-images {
+        flex-direction: column;
+    }
+    
+    .about-content, .location-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .simulation-form, .visit-form {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 70vh;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.6rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .feature-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .container {
+        width: 95%;
+    }
+    
+    .simulation-form, .visit-form {
+        padding: 1.5rem;
+    }
+}
+
+/* Animações melhoradas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Otimizações de desempenho */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Loading states para imagens */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles para acessibilidade */
+button:focus,
+input:focus,
+select:focus,
+a:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --accent-color: #FFD700;
+    }
+    
+    .btn {
+        border: 2px solid var(--secondary-color);
+    }
+}
